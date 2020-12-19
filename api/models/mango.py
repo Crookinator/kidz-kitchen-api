@@ -5,9 +5,9 @@ from django.contrib.auth import get_user_model
 class Mango(models.Model):
   # define fields
   # https://docs.djangoproject.com/en/3.0/ref/models/fields/
-  title = models.CharField(max_length=100)
-  favorite = models.BooleanField()
-  description = models.CharField(max_length=100)
+  name = models.CharField(max_length=100)
+  ripe = models.BooleanField()
+  color = models.CharField(max_length=100)
   owner = models.ForeignKey(
       get_user_model(),
       on_delete=models.CASCADE

@@ -5,9 +5,8 @@ class Recipe(models.Model):
   # define fields
   title = models.CharField(max_length=100)
   cuisine = models.CharField()
-  favorite = models.BooleanField()
-  description = models.CharField(max_length=200)
-  ingredients = models.CharField(max_length=200)
+  description = models.CharField(max_length=500)
+  ingredients = models.CharField(max_length=500)
   instructions = models.CharField()
   owner = models.ForeignKey(
       get_user_model(),
@@ -16,16 +15,15 @@ class Recipe(models.Model):
 
   def __str__(self):
     # This must return a string
-    return f"The recipe titled '{self.title}' is {self.color} in color. It is {self.ripe} that it is ripe."
+    return f"The recipe titled '{self.title}'."
 
   def as_dict(self):
     """Returns dictionary version of Mango models"""
     return {
         'id': self.id,
         'title': self.title,
-       'cuisine': self.cuisine
-        'favorite': self.favorite,
+       'cuisine': self.cuisine,
         'description': self.description,
         'instructions': self.instructions,
-        ingredients': self.ingredients'
+        'ingredients': self.ingredients
     }

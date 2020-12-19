@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
 from .models.mango import Mango
+from .models.recipe import Recipe
 from .models.user import User
 
 class MangoSerializer(serializers.ModelSerializer):
@@ -12,7 +13,7 @@ class MangoSerializer(serializers.ModelSerializer):
 class RecipeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Recipe
-        fields = ('id', 'title', 'favorite', 'description', 'ingredients', 'instructions', 'owner')
+        fields = ('id', 'title', 'description', 'cuisine', 'ingredients', 'instructions', 'owner')
 
 class UserSerializer(serializers.ModelSerializer):
     # This model serializer will be used for User creation
