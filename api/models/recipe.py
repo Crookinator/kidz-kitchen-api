@@ -4,10 +4,10 @@ from django.contrib.auth import get_user_model
 class Recipe(models.Model):
   # define fields
   title = models.CharField(max_length=100)
-  cuisine = models.CharField()
+  cuisine = models.CharField(max_length=100)
   description = models.CharField(max_length=500)
   ingredients = models.CharField(max_length=500)
-  instructions = models.CharField()
+  instructions = models.CharField(max_length=2000)
   owner = models.ForeignKey(
       get_user_model(),
       on_delete=models.CASCADE
