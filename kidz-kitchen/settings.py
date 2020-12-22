@@ -79,6 +79,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
@@ -173,3 +174,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Use the custom user model as the auth user for the admin view
 AUTH_USER_MODEL = 'api.User'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
