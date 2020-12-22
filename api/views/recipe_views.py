@@ -12,7 +12,7 @@ from ..serializers import RecipeSerializer, UserSerializer
 
 # Create your views here.
 class Recipes(generics.ListCreateAPIView):
-    permission_classes=(IsAuthenticated,)
+       permission_classes=(IsAuthenticated,)
     serializer_class = RecipeSerializer
     def get(self, request):
         """Index request"""
